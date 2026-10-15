@@ -30,9 +30,7 @@ namespace group_project.Models
         public Category Category { get; set; } = null;
 
         // Read URL properly
-        public string Slug =>
-            (FirstName + "-" + LastName)
-                .Replace(' ', '-')
-                .ToLower();
+        public string Slug => FirstName?.Replace(' ', '-').ToLower() + "-" + LastName?.Replace(' ', '-').ToLower();
+
     }
 }

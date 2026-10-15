@@ -8,7 +8,7 @@ namespace group_project.Controllers
     public class HomeController : Controller
     {
         private readonly ContactsContext context;
-
+        
         public HomeController(ContactsContext ctx) 
         {
             context = ctx;
