@@ -20,18 +20,3 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-
-.contact-banner {
-    background-color: #343a40;
-    color: white;
-    text-align: center;
-    padding: 28px 10px;
-    margin-bottom: 10px;
-}
-
-    .contact-banner h1 {
-        font-size: 2.5rem;
-        font-weight: 500;
-        margin: 0;
-    }
