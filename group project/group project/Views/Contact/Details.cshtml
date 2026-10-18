@@ -1,5 +1,56 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model group_project.Models.Contact
+
 @{
+    ViewData["Title"] = "Contact Details";
 }
+
+<div class="contact-banner">
+    <h1>Contact Manager</h1>
+</div>
+
+<h2>Contact Details</h2>
+
+<table class="table table-bordered">
+    <tbody>
+        <tr>
+            <td style="width: 25%;">Name:</td>
+            <td>@Model.FirstName @Model.LastName</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>@Model.Phone</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td>Category:</td>
+            <td>@Model.Category.CategoryName</td>
+        </tr>
+        <tr>
+            <td>Organization:</td>
+            <td>@Model.Organization</td>
+        </tr>
+        <tr>
+            <td>Date added:</td>
+            <td>@Model.DateAdded.ToString("M/d/yyyy 'at' h:mm tt")</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a asp-controller="Contact" asp-action="Edit"
+                   asp-route-id="@Model.ContactId"
+                   asp-route-slug="@Model.Slug"
+                   class="btn btn-dark">Edit</a>
+
+                <a asp-controller="Contact" asp-action="Delete"
+                   asp-route-id="@Model.ContactId"
+                   asp-route-slug="@Model.Slug"
+                   class="btn btn-dark">Delete</a>
+
+                <a asp-controller="Home" asp-action="Index"
+                   class="btn btn-dark">Home</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

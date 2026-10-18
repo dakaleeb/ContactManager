@@ -1,5 +1,80 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model group_project.Models.Contact
+
 @{
+    string action = ViewBag.Action;
+    ViewData["Title"] = action + " Contact";
+}
+
+<div class="contact-banner">
+    <h1>Contact Manager</h1>
+</div>
+
+<h2>@action Contact</h2>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-controller="Contact" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ContactId" />
+
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label">First name</label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label">Last name</label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label">Phone</label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CategoryID" class="form-label">Category</label>
+        <select asp-for="CategoryID" class="form-select">
+            <option value="">select a category</option>
+            @foreach (group_project.Models.Category category in ViewBag.Categories)
+            {
+                <option value="@category.CategoryId">
+                    @category.CategoryName
+                </option>
+            }
+        </select>
+        <span asp-validation-for="CategoryID" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Organization" class="form-label">Organization</label>
+        <input asp-for="Organization" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-dark">@action</button>
+
+    @if (Model.ContactId == 0)
+    {
+        <a asp-controller="Home" asp-action="Index"
+           class="btn btn-dark">Cancel</a>
+    }
+    else
+    {
+        <a asp-controller="Contact" asp-action="Details"
+           asp-route-id="@Model.ContactId"
+           asp-route-slug="@Model.Slug"
+           class="btn btn-dark">Cancel</a>
+    }
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }
