@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Contact>
+@{
     ViewData["Title"] = "Contact Manager";
 }
 
@@ -21,26 +22,31 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var contacts in Model)
+        @foreach (var contact in Model)
         {
             <tr>
                 <td>
                     <a asp-controller="Contact" asp-action="Details"
-                       asp-route-id="@contacts.ContactId"
-                       asp-route-slug="@contacts.Slug">
-                        @contacts.FirstName
+                       asp-route-id="@contact.ContactId"
+                       asp-route-slug="@contact.Slug">
+                        @contact.FirstName
                     </a>
                 </td>
                 <td>
                     <a asp-controller="Contact" asp-action="Details"
-                       asp-route-id="@contacts.ContactId"
-                       asp-route-slug="@contacts.Slug">
-                        @contacts.LastName
+                       asp-route-id="@contact.ContactId"
+                       asp-route-slug="@contact.Slug">
+                        @contact.LastName
                     </a>
                 </td>
-                <td>@contacts.Phone</td>
-                <td>@contacts.Email</td>
-                <td>@contacts.Category.CategoryName</td>
+                <td>@contact.Phone</td>
+                <td>@contact.Email</td>
+                <td>@contact.Category.CategoryName</td>
+                <td>
+                    <a asp-controller="Contact" asp-action="Edit" asp-route-id="@contact.ContactId" asp-route-slug="@contact.Slug">Edit</a>
+
+                    <a asp-controller="Contact" asp-action="Delete" asp-route-id="@contact.ContactId" asp-route-slug="@contact.Slug">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

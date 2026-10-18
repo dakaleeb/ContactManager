@@ -4111,11 +4111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\delta\\OneDrive\\Desktop\\MVC_class\\group project\\group project\\group project.csproj",
+      "projectUniqueName": "C:\\Users\\delta\\OneDrive\\Desktop\\MVC_class\\ContactManager\\group project\\group project\\group project.csproj",
       "projectName": "group project",
-      "projectPath": "C:\\Users\\delta\\OneDrive\\Desktop\\MVC_class\\group project\\group project\\group project.csproj",
+      "projectPath": "C:\\Users\\delta\\OneDrive\\Desktop\\MVC_class\\ContactManager\\group project\\group project\\group project.csproj",
       "packagesPath": "C:\\Users\\delta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\delta\\OneDrive\\Desktop\\MVC_class\\group project\\group project\\obj\\",
+      "outputPath": "C:\\Users\\delta\\OneDrive\\Desktop\\MVC_class\\ContactManager\\group project\\group project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

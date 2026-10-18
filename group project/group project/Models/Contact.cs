@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace group_project.Models
 {
@@ -27,6 +28,7 @@ namespace group_project.Models
         [Range(1,1000000,ErrorMessage ="Please select a category.")]
         public int? CategoryID { get; set; }
 
+        [ValidateNever]
         public Category Category { get; set; } = null;
 
         // Read URL properly

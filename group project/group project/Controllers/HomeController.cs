@@ -21,12 +21,8 @@ namespace group_project.Controllers
                 .ThenBy(c => c.LastName)
                 .ToList();
 
-            return View();
+            return View(contacts);
         }
 
-        public IActionResult Privacy() 
-        {
-            return View();
-        }
     }
 }
