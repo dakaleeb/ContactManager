@@ -1,15 +1,27 @@
-﻿@model Contact
+﻿@model group_project.Models.Contact
+
 @{
     ViewData["Title"] = "Delete Contact";
 }
 
+<div class="contact-banner">
+    <h1>Contact Manager</h1>
+</div>
+
 <h2>Delete Contact</h2>
-<P>Are you sure your want to delete @Model.FirstName @Model.LastName?</P>
 
-<form asp-action="Delete" method="post">
+<p>
+    Do you really want to delete
+    <strong>@Model.FirstName @Model.LastName</strong>?
+</p>
 
-    <input type="hidden" asp-for="ContactId"/>
+<form asp-controller="Contact" asp-action="Delete" method="post">
+    <input type="hidden" name="contactId" value="@Model.ContactId" />
 
-    <button type="submit" class="btn btn-primary">Yes</button>
-    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">No</a>
+    <button type="submit" class="btn btn-dark">Yes</button>
+
+    <a asp-controller="Contact" asp-action="Details"
+       asp-route-id="@Model.ContactId"
+       asp-route-slug="@Model.Slug"
+       class="btn btn-dark">No</a>
 </form>

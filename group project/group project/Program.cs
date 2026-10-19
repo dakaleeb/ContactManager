@@ -10,6 +10,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ContactsContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ContactsContext")));
 
+builder.Services.AddRouting(options =>
+{
+    options.LowercaseUrls = true;
+    options.AppendTrailingSlash = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
