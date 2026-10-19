@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/*using Microsoft.AspNetCore.Mvc;
 using group_project.Models;
 
 namespace group_project.Controllers
@@ -67,5 +67,6 @@ namespace group_project.Controllers
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+        
     }
-}
+}*/
